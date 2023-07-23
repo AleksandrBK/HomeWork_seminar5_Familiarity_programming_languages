@@ -18,14 +18,18 @@ int[] array = GetArray(4, 100, 1000);
 Console.WriteLine($"Массив: [ {string.Join("; ", array)} ]");
 
 
-int countEven = 0;
-for (int i = 0; i < array.Length; i++)
+int CountEvenNumbers(int[] array)
 {
-    array[i] = array[i] % 2;
-    if (array[i] == 0)
+    int countEven = 0;
+    for (int i = 0; i < array.Length; i++)
     {
-        countEven++;
+        if (array[i] % 2 == 0)
+        {
+            countEven++;
+        }
     }
+    return countEven;
 }
 
+int countEven = CountEvenNumbers(array);
 Console.WriteLine($"Количество четных чисел: {countEven}");
